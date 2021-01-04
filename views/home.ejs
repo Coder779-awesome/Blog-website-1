@@ -1,0 +1,18 @@
+
+<%- include("partials/header.ejs") %> 
+
+<h1>Home</h1>
+<p><%= contentForHome %></p>
+
+<%# for(var i = 0; i < postArray.length; i++) { %> 
+    <%# console.log(postArray[i].Title); %>
+<%# } %>
+
+
+<% postArray.forEach(function(arrayPost) { %>
+    <h1><%= arrayPost.title %></h1>
+    <p><%= arrayPost.body.substring(0, 100) %>... <a href="/posts/<%= arrayPost.title %> ">Read More</a></p>
+<% }); %>
+
+
+<%- include("partials/footer.ejs") %> 
